@@ -1442,7 +1442,7 @@ select { font: 700 1rem var(--body); padding: 10px; border: 3px solid var(--line
       '<div class="dots" id="dots" aria-live="polite"></div>' +
       '<button class="drum" type="button" id="drum" aria-label="Tambour : touche une fois par mot">' + DRUM + '</button>' +
       '<button class="link" type="button" id="peekBtn">Je n\'entends rien ?</button><p class="peek" id="peek" hidden></p>';
-    actions.innerHTML = '<button class="btn" type="button" data-act="listen">🔊 Réécouter</button><button class="btn btn-action" type="button" data-act="drumDone" disabled>J\'ai fini</button>';
+    actions.innerHTML = '<button class="btn" type="button" data-act="listen">🔊 Réécouter</button><button class="btn" type="button" data-act="undoTap" disabled aria-label="Enlever un coup de tambour">⌫ Enlever</button><button class="btn btn-action" type="button" data-act="drumDone" disabled>J\'ai fini</button>';
     setFeedback('');
     $('#peek').textContent = c.p.text;
     listen();
@@ -1454,6 +1454,8 @@ select { font: 700 1rem var(--body); padding: 10px; border: 3px solid var(--line
     d.setAttribute('aria-label', G.cur.taps + ' coup' + (G.cur.taps > 1 ? 's' : ''));
     var btn = actions.querySelector('[data-act="drumDone"]');
     if (btn) btn.disabled = !G.cur.taps;
+    var ub = actions.querySelector('[data-act="undoTap"]');
+    if (ub) ub.disabled = !G.cur.taps;
   }
   function listen() {
     var c = G.cur, parts = [];
@@ -1518,7 +1520,7 @@ select { font: 700 1rem var(--body); padding: 10px; border: 3px solid var(--line
         G.step = 'drum';
         c.taps = 0;
         d.innerHTML = '';
-        actions.innerHTML = '<button class="btn" type="button" data-act="listen">🔊 Réécouter</button><button class="btn btn-action" type="button" data-act="drumDone" disabled>J\'ai fini</button>';
+        actions.innerHTML = '<button class="btn" type="button" data-act="listen">🔊 Réécouter</button><button class="btn" type="button" data-act="undoTap" disabled aria-label="Enlever un coup de tambour">⌫ Enlever</button><button class="btn btn-action" type="button" data-act="drumDone" disabled>J\'ai fini</button>';
         sayChain([[c.p.text, 0.85]]);
       }
     });
@@ -1771,6 +1773,7 @@ select { font: 700 1rem var(--body); padding: 10px; border: 3px solid var(--line
     var a = b.dataset.act;
     if (a === 'listen') listen();
     else if (a === 'drumDone') drumDone();
+    else if (a === 'undoTap') { if (G.step === 'drum' && G.cur.taps > 0) { G.cur.taps--; renderDots(); } }
     else if (a === 'help') help(false);
     else if (a === 'next') nextSentence();
   });
