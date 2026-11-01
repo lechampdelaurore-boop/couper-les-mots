@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "Couper les mots",
+  "short_name": "Couper",
+  "description": "Remettre les espaces entre les mots d'une phrase : écouter, compter les mots, puis couper.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#EAF0FF",
+  "theme_color": "#2F5BFF",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
