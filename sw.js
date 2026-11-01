@@ -1,6 +1,6 @@
 // Garde l'appli disponible hors ligne.
 // Changer CACHE à chaque mise à jour des fichiers listés ci-dessous.
-var CACHE = 'couper-les-mots-v1';
+var CACHE = 'couper-les-mots-v2';
 var FILES = [
   './',
   './index.html',
