@@ -39,7 +39,7 @@ Sons, animations, et lecture des consignes à voix haute. La phrase est lue par 
 
 ## Fichiers
 
-- `index.html` : toute l'appli (HTML, CSS et JavaScript, sans bibliothèque). Le haut du style est la charte commune des applis de Marc ; les 30 personnages de récompense sont les mêmes que dans tables-en-cartes.
+- `index.html` : toute l'appli (HTML, CSS et JavaScript, sans bibliothèque). Le haut du style est la charte commune des applis ; les 30 personnages de récompense sont les mêmes que dans tables-en-cartes.
 - `sw.js` et `manifest.webmanifest` : mode hors ligne et installation. Après une modification des fichiers de l'appli, changer la valeur de `CACHE` dans `sw.js`.
 - `fonts/` : polices Fredoka et Nunito (licence SIL Open Font License, voir les fichiers `OFL-*.txt`).
 - `icons/` : icône de l'appli.
