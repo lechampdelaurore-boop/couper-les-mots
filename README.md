@@ -31,7 +31,7 @@ Lien « Espace parent » en bas de l'accueil, puis garder le doigt appuyé 2 sec
 - **Niveau** : à changer à la main si besoin.
 - **Carnet de bord** : par jour, le nombre de phrases, celles réussies du premier coup, les coupes ratées et les aides ; puis les phrases les plus difficiles.
 
-Tout reste dans le navigateur de l'appareil (clés `marc.couper.*`) : aucun compte, et rien n'est envoyé sur internet.
+Tout reste dans le navigateur de l'appareil (clés `marc.couper.*`) : aucun compte, et rien sur les progrès n'est envoyé sur internet. Seul un compteur de visites anonyme (GoatCounter) compte les ouvertures de l'appli : pas de cookie, pas de nom.
 
 ## Réglages (⚙)
 
